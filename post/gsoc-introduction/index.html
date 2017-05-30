@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="mozilla, sebastin santy, bits pilani" name="keywords">
+<meta content="Sebastin Santy" name="author">
+<meta property="og:title" content="GSoC 2017 with Mozilla - In a Code Reverie">
+<meta property="og:url" content="http://blog.sebastinsanty.com/post/gsoc-introduction/">
+<meta property="og:description" content="Majoring in Electronics at BITS Pilani, Goa. Open-Source Enthusiast and an Avid Programmer">
+<meta property="og:type" content="website" />
+<title>GSoC 2017 with Mozilla | In a Code Reverie</title>
+<link rel="stylesheet" href="http://blog.sebastinsanty.com/css/style.css">
+<link rel="shortcut icon" href="http://blog.sebastinsanty.com/wave.ico">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://blog.sebastinsanty.com"><h1 class="title is-4">In a Code Reverie</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/SebastinSanty" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/sebastinsanty" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/sebastinsanty" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">GSoC 2017 with Mozilla</h1>
+    <h2 class="subtitle is-5">May 30, 2017 by Sebastin Santy</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/gsoc">GSoC</a>
+    
+        <a class="button is-link" href="/tags/mozilla">Mozilla</a>
+    
+        <a class="button is-link" href="/tags/bmo">BMO</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p>Hello everyone!</p>
+
+<p>So as I mentioned in my previous post, here is what I&rsquo;ll be working on, this Summer. Having worked with Mozilla for around 10 months on multiple projects, now for Google Summer of Code (GSoC), I will be working on the project <strong>&ldquo;Improving bug filing interface for <a href="https://bugzilla.mozilla.org">bugzilla.mozilla.org</a>&ldquo;</strong> with the <a href="https://wiki.mozilla.org/BMO#B-Team">Mozilla B-Team</a>.</p>
+
+<h3 id="inception">Inception</h3>
+
+<p>I started off with Firefox, submitted around 10 patches and was an active contributor during June and July. That is when I stumbled on the Bugzilla Project, not surprisingly through a bug :P. That is the start of my long association with the Mozilla B-Team. <a href="https://www.linkedin.com/in/dylanwh/">Dylan Hardison [:dylan]</a> has been constantly helping and mentoring me, all through these months. The fact that there are less people in the B-Team helped me in constant involvement with the team.</p>
+
+<p>In late January, I simultaneously started contributing to <a href="https://treeherder.mozilla.org">Treeherder</a>, owing to my knowledge in Django and Angular. <a href="https://www.linkedin.com/in/wrlach">William Lachance [:wlach]</a> was kind enough to give me an interesting project &ldquo;Replacing REST APIs with GraphQL&rdquo; which I am still working on, alongwith <a href="https://www.linkedin.com/in/cameron-dawson-a9a41a/">Cameron Dawson [:camd]</a> as William moved on to the telemetry project (I have a lot more to say about this, but in a later post).</p>
+
+<p>Finally, after discussing with my mentors, I decided to pick the project to improve bug filing interface for bugzilla.mozilla.org though I had prepared a proposal for the Treeherder project, merely as an outline, for the upcoming work.</p>
+
+<h3 id="my-project">My Project</h3>
+
+<p>My work is with the Mozilla&rsquo;s version of Bugzilla Project, called bugzilla.mozilla.org (BMO). At present BMO uses enter_bug.cgi to file bugs. People filing bugs on BMO frequently, are aware of how tedious the process of filing bugs is. Some of the existing problems I intend to solve are:</p>
+
+<ol>
+<li><p>Presence of multiple views for different types of users: simple, advanced, and the &ldquo;guided&rdquo; wizard-like system, is an issue. The new interface will have a single-page interface.</p></li>
+
+<li><p>Presence of a lot of legacy code, taken from the upstream (Bugzilla Project), which makes it difficult for even developers to make any substantial changes, or create custom form wrappers over them. This calls for a green-field approach. So instead of working on enter_bug.cgi, I&rsquo;ll be creating a new cgi script (new_bug.cgi), which will work in parallel to the former, until it is cleared of all the bugs.</p></li>
+
+<li><p>The most biggest problem is that bug filing consumes a lot of time. There are two parts to this issue:</p>
+
+<ol>
+<li><p>enter_bug.cgi is completely dependent on Template Toolkit rendering of html pages. The parts of the templates that are slow involve loops over huge lists of things. Core developers of Firefox routinely leave open tabs because loading bug filing page for the Core product takes upwards of 8 seconds. The new interface will have less dependence on backend rendering, and will rely more on AJAX loading of data.</p></li>
+
+<li><p>Also submitting the bugs takes a good amount of time. This is because, enter_bug.cgi is a stateless CGI that posts form data to post_bug.cgi which subsequently makes a database entry. This is easily confused with process_bug.cgi, which is the backend for show_bug.cgi. Having a unified place in the web UI for bug creation would be a cleaner design.</p></li>
+</ol></li>
+</ol>
+
+<p>Other than solving the above problems, I will also take into consideration new features like Bug Modal design (which was used for the current show_bug.cgi) while building this project. The meta-tracking bug for the project is <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1365317">Bug 1365317</a></p>
+
+<p>Thanks for going through my long post. I hope to complete the GSoC Project with <em>Zarro Boogs</em> (you should know the Bugzilla slang to understand this :P). Signing off. Until next time :-).</p>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-introduction%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-introduction%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-introduction%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=GSoC%202017%20with%20Mozilla - http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-introduction%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-introduction%2f&title=GSoC%202017%20with%20Mozilla" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'sebastins-blog';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | Sebastin Santy | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/python.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/javascript.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-99569818-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+

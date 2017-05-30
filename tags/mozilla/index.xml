@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on In a Code Reverie</title>
-    <link>http://blog.sebastinsanty.com/post/index.xml</link>
-    <description>Recent content in Posts on In a Code Reverie</description>
+    <title>Mozilla on In a Code Reverie</title>
+    <link>http://blog.sebastinsanty.com/tags/mozilla/index.xml</link>
+    <description>Recent content in Mozilla on In a Code Reverie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2017 | Sebastin Santy | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Tue, 30 May 2017 11:49:35 +0530</lastBuildDate>
-    <atom:link href="http://blog.sebastinsanty.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.sebastinsanty.com/tags/mozilla/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>GSoC 2017 with Mozilla</title>
@@ -51,24 +50,6 @@
 &lt;p&gt;Other than solving the above problems, I will also take into consideration new features like Bug Modal design (which was used for the current show_bug.cgi) while building this project. The meta-tracking bug for the project is &lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1365317&#34;&gt;Bug 1365317&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Thanks for going through my long post. I hope to complete the GSoC Project with &lt;em&gt;Zarro Boogs&lt;/em&gt; (you should know the Bugzilla slang to understand this :P). Signing off. Until next time :-).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>http://blog.sebastinsanty.com/post/introduction/</link>
-      <pubDate>Sun, 21 May 2017 12:37:00 +0530</pubDate>
-      
-      <guid>http://blog.sebastinsanty.com/post/introduction/</guid>
-      <description>&lt;p&gt;Hi everyone!&lt;/p&gt;
-
-&lt;p&gt;After several attempts, I finally step into the world of blogging. Part of my motivation this time, lies in me getting selected for Google Summer of Code 2017 (More on this in a later post). A bit of an introduction about me:&lt;/p&gt;
-
-&lt;p&gt;I am Sebastin Santy and I&amp;rsquo;m a second year undergraduate student pursing a major in Electronics and Instrumentation Engineering at &lt;a href=&#34;http://www.bits-pilani.ac.in/Goa/&#34;&gt;BITS Pilani K.K. Birla Goa Campus&lt;/a&gt;. I am an open source enthusiast and an avid programmer. You can find more about me @ &lt;a href=&#34;http://sebastinsanty.com&#34;&gt;http://sebastinsanty.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As the title of my blog suggests, I intend to write more about my thoughts and endeavours on code and expect to update every week, on problems I tackle in this small little world of my coding.&lt;/p&gt;
-
-&lt;p&gt;Signing off. Until next time :-).&lt;/p&gt;
 </description>
     </item>
     

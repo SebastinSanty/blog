@@ -2,19 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.sebastinsanty.com/post/gsoc-introduction/</loc>
+    <lastmod>2017-05-30T11:49:35+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.sebastinsanty.com/post/introduction/</loc>
     <lastmod>2017-05-21T12:37:00+05:30</lastmod>
   </url>
   
   <url>
+    <loc>http://blog.sebastinsanty.com/tags/bmo/</loc>
+    <lastmod>2017-05-30T11:49:35+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sebastinsanty.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sebastinsanty.com/categories/category/</loc>
+    <lastmod>2017-05-30T11:49:35+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sebastinsanty.com/tags/gsoc/</loc>
+    <lastmod>2017-05-30T11:49:35+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.sebastinsanty.com/</loc>
-    <lastmod>2017-05-21T12:37:00+05:30</lastmod>
+    <lastmod>2017-05-30T11:49:35+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sebastinsanty.com/tags/mozilla/</loc>
+    <lastmod>2017-05-30T11:49:35+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.sebastinsanty.com/post/</loc>
-    <lastmod>2017-05-21T12:37:00+05:30</lastmod>
+    <lastmod>2017-05-30T11:49:35+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.sebastinsanty.com/tags/</loc>
     <priority>0</priority>
   </url>
   
