@@ -24,11 +24,11 @@
 
 &lt;h3 id=&#34;inception&#34;&gt;Inception&lt;/h3&gt;
 
-&lt;p&gt;I started off with Firefox, submitted around 10 patches and was an active contributor during June and July. That is when I stumbled on the Bugzilla Project, not surprisingly through a bug :P. That is the start of my long association with the Mozilla B-Team. &lt;a href=&#34;https://www.linkedin.com/in/dylanwh/&#34;&gt;Dylan Hardison [:dylan]&lt;/a&gt; has been constantly helping and mentoring me, all through these months. The fact that there are less people in the B-Team helped me in constant involvement with the team.&lt;/p&gt;
+&lt;p&gt;I started off with Firefox, submitted around 10 patches and was an active contributor during June and July. That is when I stumbled on the Bugzilla Project, not surprisingly through a bug. That is the start of my long association with the Mozilla B-Team. &lt;a href=&#34;https://www.linkedin.com/in/dylanwh/&#34;&gt;Dylan Hardison [:dylan]&lt;/a&gt; has been constantly helping and mentoring me, all through these months. The fact that there are less people in the B-Team helped me in constant involvement with the team.&lt;/p&gt;
 
 &lt;p&gt;In late January, I simultaneously started contributing to &lt;a href=&#34;https://treeherder.mozilla.org&#34;&gt;Treeherder&lt;/a&gt;, owing to my knowledge in Django and Angular. &lt;a href=&#34;https://www.linkedin.com/in/wrlach&#34;&gt;William Lachance [:wlach]&lt;/a&gt; was kind enough to give me an interesting project &amp;ldquo;Replacing REST APIs with GraphQL&amp;rdquo; which I am still working on, alongwith &lt;a href=&#34;https://www.linkedin.com/in/cameron-dawson-a9a41a/&#34;&gt;Cameron Dawson [:camd]&lt;/a&gt; as William moved on to the telemetry project (I have a lot more to say about this, but in a later post).&lt;/p&gt;
 
-&lt;p&gt;Finally, after discussing with my mentors, I decided to pick the project to improve bug filing interface for bugzilla.mozilla.org though I had prepared a proposal for the Treeherder project, merely as an outline, for the upcoming work.&lt;/p&gt;
+&lt;p&gt;Finally, after discussing with my mentors, I decided to pick the project to improve bug filing interface for bugzilla.mozilla.org.&lt;/p&gt;
 
 &lt;h3 id=&#34;my-project&#34;&gt;My Project&lt;/h3&gt;
 
@@ -50,7 +50,7 @@
 
 &lt;p&gt;Other than solving the above problems, I will also take into consideration new features like Bug Modal design (which was used for the current show_bug.cgi) while building this project. The meta-tracking bug for the project is &lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1365317&#34;&gt;Bug 1365317&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Thanks for going through my long post. I hope to complete the GSoC Project with &lt;em&gt;Zarro Boogs&lt;/em&gt; (you should know the Bugzilla slang to understand this :P). Signing off. Until next time :-).&lt;/p&gt;
+&lt;p&gt;Thanks for going through my long post. I hope to complete the GSoC Project with &lt;em&gt;Zarro Boogs&lt;/em&gt; (you should know the Bugzilla slang to understand this! :) ). Signing off. Until next time :-).&lt;/p&gt;
 </description>
     </item>
     
