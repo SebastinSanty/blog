@@ -10,6 +10,34 @@
     <atom:link href="http://blog.sebastinsanty.com/tags/mozilla/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>GSoC Week 2: Some bugs here and some vagrant there</title>
+      <link>http://blog.sebastinsanty.com/post/gsoc-week-2/</link>
+      <pubDate>Mon, 12 Jun 2017 18:50:19 +0530</pubDate>
+      
+      <guid>http://blog.sebastinsanty.com/post/gsoc-week-2/</guid>
+      <description>
+
+&lt;p&gt;As the second week of GSoC comes to an end, I have been able to cover three major bugs till now.&lt;/p&gt;
+
+&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1365340&#34;&gt;Bug 1365340&lt;/a&gt;: A new bug interface has been created. This loads up on &lt;code&gt;/new-bug&lt;/code&gt; which is served by the new_bug.cgi script. This went pretty much easy, as this only needed loading of a page. The result is live in action: &lt;a href=&#34;https://bugzilla.mozilla.org/new-bug&#34;&gt;https://bugzilla.mozilla.org/new-bug&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1365342&#34;&gt;Bug 1365342&lt;/a&gt;: The first major task was to move &lt;code&gt;new_comment&lt;/code&gt; functionality to &lt;code&gt;new-bug&lt;/code&gt;. This was one of the challenging tasks, as several components used in the new bug modal design were tightly coupled with the &lt;code&gt;show_bug.cgi&lt;/code&gt; for which the design was originally deployed. A workaround which we came up was to make copies of the same components with a &lt;code&gt;common-*&lt;/code&gt; prefix and then reduce and shift around functionalities, so that it becomes generalized by the end of GSoC period. This means that the end result of GSoC will also consist of generalization of Bug Modal Design to be used by other templates in addition to the new-bug interface&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/mozilla-bteam/bmo/pull/92&#34;&gt;PR 92&lt;/a&gt;: Another issue that propped in between was the ease of rapid debugging. Rapid debugging is especially required, when the work involves a lot of client-side work, as was my case in some of the initial tasks. The already available provisioner script was tedious, as this was only required to setup BMO locally. A new update provisioner script was designed to limit the time of execution from upwards of quarter of a minute to 6 seconds.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I enjoyed working on some of the initializing bugs this week. And Oh, over a casual chat with my mentor, I came to know about something great: Bugzilla was (and is) used by NASA for its missions. Don&amp;rsquo;t believe me, Check this out:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.sebastinsanty.com/static/bugzilla_nasa.png&#34; alt=&#34;Example image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Signing off. Until next time :)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>GSoC 2017 with Mozilla</title>
       <link>http://blog.sebastinsanty.com/post/gsoc-introduction/</link>
       <pubDate>Tue, 30 May 2017 11:49:35 +0530</pubDate>
