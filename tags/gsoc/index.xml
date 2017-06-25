@@ -10,6 +10,32 @@
     <atom:link href="http://blog.sebastinsanty.com/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>GSoC Week 4: Here comes the protoype</title>
+      <link>http://blog.sebastinsanty.com/post/gsoc-week-4/</link>
+      <pubDate>Sun, 25 Jun 2017 23:27:08 +0530</pubDate>
+      
+      <guid>http://blog.sebastinsanty.com/post/gsoc-week-4/</guid>
+      <description>
+
+&lt;p&gt;Hi everyone! Next week is the Phase I evaluations for my GSoC project. I have been able to finish the prototype as planned in my proposal.&lt;/p&gt;
+
+&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1365345&#34;&gt;Bug 1365345&lt;/a&gt;: The work involved winding up the previous month’s work of unusable bits into a working prototype. There were two issues faced during this:&lt;/p&gt;
+
+&lt;p&gt;1) &lt;strong&gt;Tracking Module&lt;/strong&gt;: &lt;code&gt;Bugzilla::Bug&lt;/code&gt; object required a mandatory version field, which was lacking on the interface. Before the work on prototype started, we only had the &lt;code&gt;Status&lt;/code&gt; and &lt;code&gt;Null&lt;/code&gt; Modules. But because of the inclusion of version, &lt;code&gt;Tracking&lt;/code&gt; module also needed to be introduced. This also meant, the previous AJAX call designed for the components had to be extended to retrieve the versions too.&lt;/p&gt;
+
+&lt;p&gt;2) &lt;strong&gt;Extending API&lt;/strong&gt;: As discussed above, the components API was extended to facilitate the retrieval of &lt;code&gt;versions&lt;/code&gt;. Also, as a result of this, the &lt;code&gt;components&lt;/code&gt; API was renamed to &lt;code&gt;product_info&lt;/code&gt;, to indicate its use properly.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As the Phase I of GSoC is getting over, the major hurdles of setting up the inferface is done with and a flow has been created. Now it would be easy to extend the functionality of the new-bug interface. Here’s a look of how the new-bug interface looks like, till now:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.sebastinsanty.com/static/phase1prototype.png&#34; alt=&#34;Prototype Image&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>GSoC Week 3: REST the bugs</title>
       <link>http://blog.sebastinsanty.com/post/gsoc-week-3/</link>
       <pubDate>Wed, 21 Jun 2017 17:53:07 +0530</pubDate>
