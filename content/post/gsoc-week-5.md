@@ -14,7 +14,7 @@ This post comes very late than scheduled. My phase evaluations got over last wee
 
 ## Work
 
-The primary problem was that the BFCache wasn’t functioning as expected. All forms in BMO have this feature inherently and hence there was no way, the PR was to be merged. BFCache stands for back-forward cache. The heavy jquery manipulations I performed on the <select> elements to AJAX-load data, was what was causing the problem with BFCache.
+The primary problem was that the BFCache wasn’t functioning as expected. All forms in BMO have this feature inherently and hence there was no way, the PR was to be merged. BFCache stands for back-forward cache. The heavy jquery manipulations I performed on the `<select>` elements to AJAX-load data, was what was causing the problem with BFCache.
 
 To overcome this, we chose to go with [selectize.js](https://selectize.github.io/selectize.js/) which helps in loading data with customizations along with the implementation of BFCache. Over discussions, we also thought of replacing the existing prodcompsearch module with the tagging feature of selectize. In short, there are a lot of features in selectize which can be exploited in future. One minor challenge was to match selectize’ design with the BMO guidelines, by hacking some CSS.
 
