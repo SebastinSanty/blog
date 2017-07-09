@@ -7,8 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;http://sebastinsanty.com&#34; target=&#34;_blank&#34;&gt;Sebastin Santy&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Sun, 25 Jun 2017 23:27:08 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jul 2017 10:01:39 +0530</lastBuildDate>
     <atom:link href="http://blog.sebastinsanty.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GSoC Week 5: Caching in with selectize</title>
+      <link>http://blog.sebastinsanty.com/post/gsoc-week-5/</link>
+      <pubDate>Sun, 09 Jul 2017 10:01:39 +0530</pubDate>
+      
+      <guid>http://blog.sebastinsanty.com/post/gsoc-week-5/</guid>
+      <description>
+
+&lt;p&gt;Hi everyone!&lt;/p&gt;
+
+&lt;p&gt;This post comes very late than scheduled. My phase evaluations got over last week and questions were only based on mentor evaluations. We did face some hurdles even after the model prototype was designed, which delayed the PR to over one week.&lt;/p&gt;
+
+&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;
+
+&lt;p&gt;The primary problem was that the BFCache wasn’t functioning as expected. All forms in BMO have this feature inherently and hence there was no way, the PR was to be merged. BFCache stands for back-forward cache. The heavy jquery manipulations I performed on the &lt;select&gt; elements to AJAX-load data, was what was causing the problem with BFCache.&lt;/p&gt;
+
+&lt;p&gt;To overcome this, we chose to go with &lt;a href=&#34;https://selectize.github.io/selectize.js/&#34;&gt;selectize.js&lt;/a&gt; which helps in loading data with customizations along with the implementation of BFCache. Over discussions, we also thought of replacing the existing prodcompsearch module with the tagging feature of selectize. In short, there are a lot of features in selectize which can be exploited in future. One minor challenge was to match selectize’ design with the BMO guidelines, by hacking some CSS.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The patch has been merged, and I am now looking forward to implement the other modules into new-bug. Due to less people in my team (with atoll going out), I also help in reviewing patches occasionally. I received my first stipend of 720$ after the evaluations and now excited to complete the remaining project in time.&lt;/p&gt;
+
+&lt;p&gt;Signing off. Until next time :)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GSoC Week 4: Here comes the protoype</title>
