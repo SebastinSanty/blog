@@ -7,8 +7,56 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2017 | &lt;a href=&#34;http://sebastinsanty.com&#34; target=&#34;_blank&#34;&gt;Sebastin Santy&lt;/a&gt; | &lt;a href=&#34;https://github.com/mgjohansen/hucore.git&#34; target=&#34;_blank&#34;&gt;Hucore theme&lt;/a&gt; &amp; &lt;a href=&#34;http://gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; ♥</copyright>
-    <lastBuildDate>Sun, 09 Jul 2017 10:01:39 +0530</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jul 2017 01:04:24 +0530</lastBuildDate>
     <atom:link href="http://blog.sebastinsanty.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Integrate GraphQL in Treeherder</title>
+      <link>http://blog.sebastinsanty.com/post/treeherder-graphql-intro/</link>
+      <pubDate>Thu, 13 Jul 2017 01:04:24 +0530</pubDate>
+      
+      <guid>http://blog.sebastinsanty.com/post/treeherder-graphql-intro/</guid>
+      <description>
+
+&lt;p&gt;It was almost six months ago when over the general chat, &lt;a href=&#34;https://mozillians.org/en-US/u/wlach/&#34;&gt;William&lt;/a&gt; discussed the idea of integrating &lt;a href=&#34;http://graphql.org&#34;&gt;GraphQL&lt;/a&gt; with &lt;a href=&#34;https://treeherder.mozilla.org&#34;&gt;treeherder&lt;/a&gt;. GraphQL is a novel standard created by Facebook, to replace existing clunky REST APIs.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-graphql&#34;&gt;Why GraphQL&lt;/h2&gt;
+
+&lt;p&gt;At its core when compared to REST, it stands out in two aspects mainly:&lt;/p&gt;
+
+&lt;p&gt;1) REST APIs give out a lot of information than what might be required by the web interface. To put it short, REST APIs have a static structure, and for even getting one string, the whole JSON has to be retrieved. Large JSON, means more data needs to be both fetched from the database, serialized into a JSON response and transferred to the client.&lt;/p&gt;
+
+&lt;p&gt;2) To retrieve several linked entities (relational), multiple requests have to be made when using REST APIs. GraphQL can get you data in one go.&lt;/p&gt;
+
+&lt;p&gt;A possible solution to this does exist: Hand-coding of custom endpoints, but this is very tedious and may result in redundancy.&lt;/p&gt;
+
+&lt;p&gt;As the above points suggest, GraphQL is highly dynamic. A user needs to query only the data it requires, in the form of a json “graph”, traversing across object types, and the API returns exactly what the user asked for, in a single response. This makes it easier to be used across various platforms, like data-sensitive mobile devices. The below picture accurately describes the difference.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://blog.sebastinsanty.com/static/restvsgraphql.png&#34; alt=&#34;REST vs GraphQL Image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There shouldn’t be any apprehensions when going production-level: Facebook has been using GraphQL since 2012. They open sourced the concept only in 2015.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-does-it-help-treeherder&#34;&gt;How does it help Treeherder&lt;/h2&gt;
+
+&lt;p&gt;As noted by William on the bug[2]:&lt;/p&gt;
+
+&lt;p&gt;1) The jobs API endpoints provides a lot of data, much of which is unused by the frontend. For example, we hit this endpoint to get the jobs for display:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://treeherder.mozilla.org/api/project/mozilla-inbound/jobs/?count=2000&amp;amp;result_set_id=226266&amp;amp;return_type=list&#34;&gt;https://treeherder.mozilla.org/api/project/mozilla-inbound/jobs/?count=2000&amp;amp;result_set_id=226266&amp;amp;return_type=list&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2) At the same time, getting different types of information pertaining to a job (performance data, job details, error summary lines) require multiple requests, which slows response time (every time you load the details panel for a job, 4+ http requests need to be processed).&lt;/p&gt;
+
+&lt;p&gt;There are also some new views coming up in treeherder (e.g. a manifest-based view) and these views will almost certainly need data that isn&amp;rsquo;t in the main jobs table.&lt;/p&gt;
+
+&lt;p&gt;At present &lt;a href=&#34;https://mozillians.org/dsb/u/camd/&#34;&gt;Cameron&lt;/a&gt; is working enthusiastically towards this. I’ve started again after almost a month or two.&lt;/p&gt;
+
+&lt;p&gt;I hope, next post will have some good showcase of the implementation! Thank You :-)&lt;/p&gt;
+
+&lt;p&gt;References:&lt;br /&gt;
+[1] &lt;a href=&#34;https://dev-blog.apollodata.com/why-graphql-is-the-future-3bec28193807&#34;&gt;https://dev-blog.apollodata.com/why-graphql-is-the-future-3bec28193807&lt;/a&gt;&lt;br /&gt;
+[2] &lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1332457&#34;&gt;https://bugzilla.mozilla.org/show_bug.cgi?id=1332457&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GSoC Week 5: Caching in with selectize</title>

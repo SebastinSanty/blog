@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="mozilla, sebastin santy, bits pilani" name="keywords">
+<meta content="Sebastin Santy" name="author">
+<meta property="og:title" content="Integrate GraphQL in Treeherder - In a Code Reverie">
+<meta property="og:url" content="http://blog.sebastinsanty.com/post/treeherder-graphql-intro/">
+<meta property="og:description" content="Majoring in Electronics at BITS Pilani, Goa. Open-Source Enthusiast and an Avid Programmer">
+<meta property="og:type" content="website" />
+<title>Integrate GraphQL in Treeherder | In a Code Reverie</title>
+<link rel="stylesheet" href="http://blog.sebastinsanty.com/css/style.css">
+<link rel="shortcut icon" href="http://blog.sebastinsanty.com/wave.ico">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css">
+
+
+<section class="section">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="http://blog.sebastinsanty.com"><h1 class="title is-4">In a Code Reverie</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="http://sebastinsanty.com" target="_blank">
+            <span class="icon">
+              <i class="fa fa-globe"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://github.com/SebastinSanty" target="_blank">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/sebastinsanty" target="_blank">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://linkedin.com/in/sebastinsanty" target="_blank">
+            <span class="icon">
+              <i class="fa fa-linkedin-square"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="/index.xml" target="_blank">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h1 class="title">Integrate GraphQL in Treeherder</h1>
+    <h2 class="subtitle is-5">July 13, 2017 by Sebastin Santy</h2>
+    
+      <div class="tags">
+    
+        <a class="button is-link" href="/tags/mozilla">Mozilla</a>
+    
+        <a class="button is-link" href="/tags/treeherder">Treeherder</a>
+    
+</div>
+
+    
+    <div class="content">
+      
+
+<p>It was almost six months ago when over the general chat, <a href="https://mozillians.org/en-US/u/wlach/">William</a> discussed the idea of integrating <a href="http://graphql.org">GraphQL</a> with <a href="https://treeherder.mozilla.org">treeherder</a>. GraphQL is a novel standard created by Facebook, to replace existing clunky REST APIs.</p>
+
+<h2 id="why-graphql">Why GraphQL</h2>
+
+<p>At its core when compared to REST, it stands out in two aspects mainly:</p>
+
+<p>1) REST APIs give out a lot of information than what might be required by the web interface. To put it short, REST APIs have a static structure, and for even getting one string, the whole JSON has to be retrieved. Large JSON, means more data needs to be both fetched from the database, serialized into a JSON response and transferred to the client.</p>
+
+<p>2) To retrieve several linked entities (relational), multiple requests have to be made when using REST APIs. GraphQL can get you data in one go.</p>
+
+<p>A possible solution to this does exist: Hand-coding of custom endpoints, but this is very tedious and may result in redundancy.</p>
+
+<p>As the above points suggest, GraphQL is highly dynamic. A user needs to query only the data it requires, in the form of a json “graph”, traversing across object types, and the API returns exactly what the user asked for, in a single response. This makes it easier to be used across various platforms, like data-sensitive mobile devices. The below picture accurately describes the difference.</p>
+
+<p><img src="/static/restvsgraphql.png" alt="REST vs GraphQL Image" /></p>
+
+<p>There shouldn’t be any apprehensions when going production-level: Facebook has been using GraphQL since 2012. They open sourced the concept only in 2015.</p>
+
+<h2 id="how-does-it-help-treeherder">How does it help Treeherder</h2>
+
+<p>As noted by William on the bug[2]:</p>
+
+<p>1) The jobs API endpoints provides a lot of data, much of which is unused by the frontend. For example, we hit this endpoint to get the jobs for display:</p>
+
+<p><a href="https://treeherder.mozilla.org/api/project/mozilla-inbound/jobs/?count=2000&amp;result_set_id=226266&amp;return_type=list">https://treeherder.mozilla.org/api/project/mozilla-inbound/jobs/?count=2000&amp;result_set_id=226266&amp;return_type=list</a></p>
+
+<p>2) At the same time, getting different types of information pertaining to a job (performance data, job details, error summary lines) require multiple requests, which slows response time (every time you load the details panel for a job, 4+ http requests need to be processed).</p>
+
+<p>There are also some new views coming up in treeherder (e.g. a manifest-based view) and these views will almost certainly need data that isn&rsquo;t in the main jobs table.</p>
+
+<p>At present <a href="https://mozillians.org/dsb/u/camd/">Cameron</a> is working enthusiastically towards this. I’ve started again after almost a month or two.</p>
+
+<p>I hope, next post will have some good showcase of the implementation! Thank You :-)</p>
+
+<p>References:<br />
+[1] <a href="https://dev-blog.apollodata.com/why-graphql-is-the-future-3bec28193807">https://dev-blog.apollodata.com/why-graphql-is-the-future-3bec28193807</a><br />
+[2] <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1332457">https://bugzilla.mozilla.org/show_bug.cgi?id=1332457</a></p>
+
+    </div>
+    
+        <div class="nav-left">
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2ftreeherder-graphql-intro%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2ftreeherder-graphql-intro%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2ftreeherder-graphql-intro%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status=Integrate%20GraphQL%20in%20Treeherder - http%3a%2f%2fblog.sebastinsanty.com%2fpost%2ftreeherder-graphql-intro%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2ftreeherder-graphql-intro%2f&title=Integrate%20GraphQL%20in%20Treeherder" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'sebastins-blog';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container has-text-centered">
+    <p>&copy; 2017 | <a href="http://sebastinsanty.com" target="_blank">Sebastin Santy</a> | <a href="https://github.com/mgjohansen/hucore.git" target="_blank">Hucore theme</a> & <a href="http://gohugo.io" target="_blank">Hugo</a> ♥</p>
+  </div>
+</section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/python.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/javascript.min.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-99569818-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
