@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta content="mozilla, sebastin santy, bits pilani" name="keywords">
 <meta content="Sebastin Santy" name="author">
-<meta property="og:title" content="GSoC Week 5 &amp; 6: Caching in with selectize - In a Code Reverie">
-<meta property="og:url" content="http://blog.sebastinsanty.com/post/gsoc-week-5/">
+<meta property="og:title" content=" - In a Code Reverie">
+<meta property="og:url" content="http://blog.sebastinsanty.com/post/gsoc-week-7-8/">
 <meta property="og:description" content="Majoring in Electronics at BITS Pilani, Goa. Open-Source Enthusiast and an Avid Programmer">
 <meta property="og:type" content="website" />
-<title>GSoC Week 5 &amp; 6: Caching in with selectize | In a Code Reverie</title>
+<title> | In a Code Reverie</title>
 <link rel="stylesheet" href="http://blog.sebastinsanty.com/css/style.css">
 <link rel="shortcut icon" href="http://blog.sebastinsanty.com/wave.ico">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -64,47 +64,44 @@
 
 <section class="section">
   <div class="container">
-    <h1 class="title">GSoC Week 5 &amp; 6: Caching in with selectize</h1>
-    <h2 class="subtitle is-5">July 9, 2017 by Sebastin Santy</h2>
-    
-      <div class="tags">
-    
-        <a class="button is-link" href="/tags/gsoc">GSoC</a>
-    
-        <a class="button is-link" href="/tags/mozilla">Mozilla</a>
-    
-        <a class="button is-link" href="/tags/bmo">BMO</a>
-    
-</div>
-
+    <h1 class="title"></h1>
+    <h2 class="subtitle is-5">January 1, 0001 by Sebastin Santy</h2>
     
     <div class="content">
       
 
-<p>Hi everyone!</p>
+<p>&rdquo;&ldquo;+++
+date = &ldquo;2017-08-04T23:56:06+05:30&rdquo;
+title = &ldquo;GSoC Week 7 &amp; 8: Style it like Mozilla&rdquo;
+author = &ldquo;Sebastin Santy&rdquo;
+draft = false
+tags = [&ldquo;GSoC&rdquo;,&ldquo;Mozilla&rdquo;, &ldquo;BMO&rdquo;]
+categories = [&ldquo;category&rdquo;]
+description = &ldquo;GSoC Week 7 &amp; 8&rdquo;
++++</p>
 
-<p>This post comes very late than scheduled. My phase evaluations got over last week and questions were only based on mentor evaluations. We did face some hurdles even after the model prototype was designed, which delayed the PR to over one week.</p>
+<p>Hi everyone,</p>
+
+<p>So these weeks some radical changes happened in terms of design. The new-bug design was looking uglier day-by-day, as we were shamelessly copying the bug modal design which is actually suited for show_bug.cgi. So it was planned we’ll go with re-organizing parts of the layout and also implementing keywords feature.</p>
 
 <h2 id="work">Work</h2>
 
-<p>The primary problem was that the BFCache wasn’t functioning as expected. All forms in BMO have this feature inherently and hence there was no way, the PR was to be merged. BFCache stands for back-forward cache. The heavy jquery manipulations I performed on the <code>&lt;select&gt;</code> elements to AJAX-load data, was what was causing the problem with BFCache.</p>
-
-<p>To overcome this, we chose to go with <a href="https://selectize.github.io/selectize.js/">selectize.js</a> which helps in loading data with customizations along with the implementation of BFCache. Over discussions, we also thought of replacing the existing prodcompsearch module with the tagging feature of selectize. In short, there are a lot of features in selectize which can be exploited in future. One minor challenge was to match selectize’ design with the BMO guidelines, by hacking some CSS.</p>
+<p>After lots of discussion with my mentor, we decided to approach Kohei Yoshino (mozilla.org designer and UX expert) and his inputs were really valuable. He suggested us to go with the github issues styling and that was one good of a decision.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<p>The patch has been merged, and I am now looking forward to implement the other modules into new-bug. Due to less people in my team (with atoll going out), I also help in reviewing patches occasionally. I received my first stipend of 720$ after the evaluations and now excited to complete the remaining project in time.</p>
+<p>Here is how it looks now:</p>
 
-<p>Signing off. Until next time :)</p>
+<p>At present, I am working on clearing attachments PR and also a new feature by which users will be able to give product names in the URL using hash.</p>
 
     </div>
     
         <div class="nav-left">
-    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-5%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://plus.google.com/share?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-5%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-5%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
-    <a class="nav-item" href="https://twitter.com/home?status=GSoC%20Week%205%20%26%206%3a%20Caching%20in%20with%20selectize - http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-5%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
-    <a class="nav-item" href="http://www.reddit.com/submit?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-5%2f&title=GSoC%20Week%205%20%26%206%3a%20Caching%20in%20with%20selectize" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-7-8%2f" title="Share on Facebook" target="_blank"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://plus.google.com/share?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-7-8%2f" title="Share on Google+" target="_blank"><span class="fa fa-google-plus fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-7-8%2f" title="Share on LinkedIn" target="_blank"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
+    <a class="nav-item" href="https://twitter.com/home?status= - http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-7-8%2f" title="Tweet this" target="_blank"><span class="fa fa-twitter fa-2x"></span></a>
+    <a class="nav-item" href="http://www.reddit.com/submit?url=http%3a%2f%2fblog.sebastinsanty.com%2fpost%2fgsoc-week-7-8%2f&title=" title="Share on Reddit" target="_blank"><span class="fa fa-reddit-alien fa-2x" aria-hidden="true"></span></a>
     
     </div>
     

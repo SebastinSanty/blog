@@ -59,7 +59,7 @@
     </item>
     
     <item>
-      <title>GSoC Week 5: Caching in with selectize</title>
+      <title>GSoC Week 5 &amp; 6: Caching in with selectize</title>
       <link>http://blog.sebastinsanty.com/post/gsoc-week-5/</link>
       <pubDate>Sun, 09 Jul 2017 10:01:39 +0530</pubDate>
       
@@ -219,6 +219,40 @@
 &lt;p&gt;As the title of my blog suggests, I intend to write more about my thoughts and endeavours on code and expect to update every week, on problems I tackle in this small little world of my coding.&lt;/p&gt;
 
 &lt;p&gt;Signing off. Until next time :-).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://blog.sebastinsanty.com/post/gsoc-week-7-8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.sebastinsanty.com/post/gsoc-week-7-8/</guid>
+      <description>
+
+&lt;p&gt;&amp;rdquo;&amp;ldquo;+++
+date = &amp;ldquo;2017-08-04T23:56:06+05:30&amp;rdquo;
+title = &amp;ldquo;GSoC Week 7 &amp;amp; 8: Style it like Mozilla&amp;rdquo;
+author = &amp;ldquo;Sebastin Santy&amp;rdquo;
+draft = false
+tags = [&amp;ldquo;GSoC&amp;rdquo;,&amp;ldquo;Mozilla&amp;rdquo;, &amp;ldquo;BMO&amp;rdquo;]
+categories = [&amp;ldquo;category&amp;rdquo;]
+description = &amp;ldquo;GSoC Week 7 &amp;amp; 8&amp;rdquo;
++++&lt;/p&gt;
+
+&lt;p&gt;Hi everyone,&lt;/p&gt;
+
+&lt;p&gt;So these weeks some radical changes happened in terms of design. The new-bug design was looking uglier day-by-day, as we were shamelessly copying the bug modal design which is actually suited for show_bug.cgi. So it was planned we’ll go with re-organizing parts of the layout and also implementing keywords feature.&lt;/p&gt;
+
+&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;
+
+&lt;p&gt;After lots of discussion with my mentor, we decided to approach Kohei Yoshino (mozilla.org designer and UX expert) and his inputs were really valuable. He suggested us to go with the github issues styling and that was one good of a decision.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Here is how it looks now:&lt;/p&gt;
+
+&lt;p&gt;At present, I am working on clearing attachments PR and also a new feature by which users will be able to give product names in the URL using hash.&lt;/p&gt;
 </description>
     </item>
     
