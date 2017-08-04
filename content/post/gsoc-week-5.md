@@ -1,11 +1,11 @@
 +++
 date = "2017-07-09T10:01:39+05:30"
-title = "GSoC Week 5: Caching in with selectize"
+title = "GSoC Week 5 & 6: Caching in with selectize"
 author = "Sebastin Santy"
 draft = false
 tags = ["GSoC","Mozilla", "BMO"]
 categories = ["category"]
-description = "GSoC Week 5"
+description = "GSoC Week 5 & 6"
 +++
 
 Hi everyone!
