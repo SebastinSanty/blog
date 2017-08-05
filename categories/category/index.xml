@@ -10,6 +10,32 @@
     <atom:link href="http://blog.sebastinsanty.com/categories/category/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>GSoC Week 7 &amp; 8: Style it like Github</title>
+      <link>http://blog.sebastinsanty.com/post/gsoc-week-7-8/</link>
+      <pubDate>Wed, 26 Jul 2017 23:56:06 +0530</pubDate>
+      
+      <guid>http://blog.sebastinsanty.com/post/gsoc-week-7-8/</guid>
+      <description>
+
+&lt;p&gt;Hi everyone,&lt;/p&gt;
+
+&lt;p&gt;So these weeks some radical changes happened in terms of design. The new-bug design was looking uglier day-by-day, as we were shamelessly copying the bug modal design which is actually suited for show_bug.cgi. So it was planned we’ll go with re-organizing parts of the layout and also implementing keywords feature.&lt;/p&gt;
+
+&lt;h2 id=&#34;work&#34;&gt;Work&lt;/h2&gt;
+
+&lt;p&gt;After lots of discussion with my mentor, we decided to approach Kohei Yoshino (mozilla.org designer and UX expert) and his inputs were really valuable. He suggested us to go with the github issues styling and that was one good of a decision. Implementing keywords feature was easy, as selectize had a built in support for multiple tagging.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Here is how it looks now:
+&lt;img src=&#34;http://blog.sebastinsanty.com/static/github_like.png&#34; alt=&#34;Github Like New-Bug Image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At present, I am working on clearing attachments PR and also a new feature by which users will be able to give product names in the URL using hash, like this -&lt;br /&gt;
+&lt;code&gt;https://bugzilla.mozilla.org/new-bug#Core&lt;/code&gt;. This will be useful for power users of BMO.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Integrate GraphQL in Treeherder</title>
       <link>http://blog.sebastinsanty.com/post/treeherder-graphql-intro/</link>
       <pubDate>Thu, 13 Jul 2017 01:04:24 +0530</pubDate>
