@@ -10,6 +10,20 @@
     <atom:link href="http://blog.sebastinsanty.com/tags/gsoc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>GSoC Week 9: Attaching Files</title>
+      <link>http://blog.sebastinsanty.com/post/gsoc-week-9/</link>
+      <pubDate>Tue, 01 Aug 2017 23:52:55 +0530</pubDate>
+      
+      <guid>http://blog.sebastinsanty.com/post/gsoc-week-9/</guid>
+      <description>&lt;p&gt;Hi everyone,&lt;/p&gt;
+
+&lt;p&gt;This is a very short update, and there wasn’t much of an issue regarding this patch. It was merely adding the attachments with less options available to the user. We eliminated the review flags, as a bug filing process usually includes adding an image or a log as an attachment, and not a patch (for which a review might be required).&lt;/p&gt;
+
+&lt;p&gt;We also planned that we’ll avoid putting the tracking flags feature in the &lt;code&gt;new-bug&lt;/code&gt;, as flagging is often done, after the bug is filed, and having them, would unnecessarily clutter the interface. The development is going a bit slow again, as it is getting difficult for me to juggle between timezones, but I hope, it will be completed before the deadline - Batteries Included! :-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>GSoC Week 7 &amp; 8: Style it like Github</title>
       <link>http://blog.sebastinsanty.com/post/gsoc-week-7-8/</link>
       <pubDate>Wed, 26 Jul 2017 23:56:06 +0530</pubDate>
@@ -178,20 +192,6 @@
 &lt;p&gt;Other than solving the above problems, I will also take into consideration new features like Bug Modal design (which was used for the current show_bug.cgi) while building this project. The meta-tracking bug for the project is &lt;a href=&#34;https://bugzilla.mozilla.org/show_bug.cgi?id=1365317&#34;&gt;Bug 1365317&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Thanks for going through my long post. I hope to complete the GSoC Project with &lt;em&gt;Zarro Boogs&lt;/em&gt; (you should know the Bugzilla slang to understand this! :) ). Signing off. Until next time :-).&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GSoC Week 9: Attaching Files</title>
-      <link>http://blog.sebastinsanty.com/post/gsoc-week-9/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.sebastinsanty.com/post/gsoc-week-9/</guid>
-      <description>&lt;p&gt;Hi everyone,&lt;/p&gt;
-
-&lt;p&gt;This is a very short update, and there wasn’t much of an issue regarding this patch. It was merely adding the attachments with less options available to the user. We eliminated the review flags, as a bug filing process usually includes adding an image or a log as an attachment, and not a patch (for which a review might be required).&lt;/p&gt;
-
-&lt;p&gt;We also planned that we’ll avoid putting the tracking flags feature in the &lt;code&gt;new-bug&lt;/code&gt;, as flagging is often done, after the bug is filed, and having them, would unnecessarily clutter the interface. The development is going a bit slow again, as it is getting difficult for me to juggle between timezones, but I hope, it will be completed before the deadline - Batteries Included! :-)&lt;/p&gt;
 </description>
     </item>
     
