@@ -1,5 +1,5 @@
 +++
-date = "2017-08-1T23:52:55+05:30"
+date = "2017-08-01T23:52:55+05:30"
 title = "GSoC Week 9: Attaching Files"
 author = "Sebastin Santy"
 draft = false
